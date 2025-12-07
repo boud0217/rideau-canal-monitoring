@@ -16,9 +16,9 @@
 - **Description:** IoT sensor simulator code
 
 ### 3. Web Dashboard Repository
-- **URL:** https://github.com/yourusername/rideau-canal-dashboard
+- **URL:** https://github.com/boud0217/25F_CST8916_Final_Project_Web-Dashboard
 - **Description:** Web dashboard application
 
 ## Demo
 
-- **Video Demo:** [YouTube]
+- **Video Demo:** [YouTube](https://youtu.be/R17pMpgNFWo)
