@@ -120,19 +120,45 @@
     - Sensor Simulation Setup: https://github.com/boud0217/rideau-canal-sensor-simulation/blob/main/README.md
     - Web Dashboard Setup : https://github.com/boud0217/25F_CST8916_Final_Project_Web-Dashboard/blob/main/README.md
 
-9. **Dashboard Screenshots**
-    - ![Dashboard Screenshot 1](screenshots/07-dashboard-azure.png)
-    - ![Dashboard Screenshot 2](screenshots/07-dashboard-azure1.png)
-    - ![Dashboard Screenshot 2](screenshots/07-dashboard-local.png)
+9. **Results and Analysis**
+    - **Sample Outputs and Screenshots**
+        - Dashboard displays real-time sensor data from multiple locations along the Rideau Canal
+        - ![Dashboard Screenshot - Azure Deployment](screenshots/07-dashboard-azure.png)
+        - ![Dashboard Screenshot - Detailed View](screenshots/07-dashboard-azure1.png)
+        - ![Dashboard Screenshot - Local Testing](screenshots/07-dashboard-local.png)
+        - Each location shows aggregated metrics including ice thickness, surface temperature, snow accumulation, and safety status
+    - **Data Analysis**
+        - Stream Analytics processes sensor data in 5-minute tumbling windows, calculating averages, minimums, and maximums
+        - Safety status is automatically determined based on ice thickness and surface temperature thresholds:
+            - Safe: Average ice thickness ≥ 30cm and surface temperature ≤ -2°C
+            - Caution: Average ice thickness ≥ 25cm and surface temperature ≤ 0°C
+            - Unsafe: Conditions below caution thresholds
+        - Historical data stored in Azure Storage Account enables trend analysis and long-term pattern identification
+        - Cosmos DB provides low-latency queries for real-time dashboard updates
+    - **System Performance Observations**
+        - IoT Hub successfully handles multiple concurrent sensor connections with minimal latency
+        - Stream Analytics processes incoming data streams in real-time with consistent 5-minute aggregation windows
+        - Cosmos DB queries return results in milliseconds, enabling responsive dashboard experience
+        - Azure App Service provides reliable hosting with automatic scaling capabilities
+        - End-to-end latency from sensor data generation to dashboard visualization is typically under 10 seconds
+        - System demonstrates scalability to handle additional sensor locations without performance degradation
+
+10. **Challenges and Solutions**
+    - **Challenge 1: Realistic Sensor Data Simulation**
+        - **Solution**: Developed a Python-based simulator that generates random yet plausible environmental data, ensuring variability and realism in sensor readings.
+    - **Challenge 2: Stream Analytics Query Complexity**
+        - **Solution**: Iteratively refined SQL-like queries to accurately compute aggregations and safety status, testing with sample data to validate correctness.
+    - **Challenge 3: Web Dashboard Integration**
+        - **Solution**: Utilized Azure SDKs and REST APIs to seamlessly connect the dashboard application with Cosmos DB, ensuring real-time data retrieval and display.
 
 
-10. **AI Tools Disclosure**
+11. **AI Tools Disclosure**
     We used Amazon Q to:
     - Generate the README files
     - Code the sensor
     - Troubleshoot the errors
 
-11. **References**
+12. **References**
     - Microsoft Azure Documentation: https://docs.microsoft.com/en-us/azure/
     - IoT Hub: https://docs.microsoft.com/en-us/azure/iot-hub/
     - Stream Analytics: https://docs.microsoft.com/en-us/azure/stream-analytics/
