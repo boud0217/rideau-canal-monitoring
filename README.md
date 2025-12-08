@@ -101,7 +101,7 @@
         - Visualizes ice conditions, temperature trends, and safety status for each location
     - **Azure App Service deployment**: Deployed web application using Azure Portal
         - App Service Plan: Created Linux-based App Service Plan with appropriate pricing tier
-        - Runtime Stack: Configured NodeJS runtime environment for Flask application
+        - Runtime Stack: Configured NodeJS runtime environment for the application
         - Deployment: Deployed application code from GitHub repository using Azure Portal deployment center
         - Configuration: Added application settings for Cosmos DB connection string and environment variables
         - Access: Application accessible via Azure-provided URL for real-time monitoring dashboard
@@ -153,10 +153,9 @@
 
 
 11. **AI Tools Disclosure**
-    We used Amazon Q to:
-    - Generate the README files
-    - Code the sensor
-    - Troubleshoot the errors
+    - **Tool:** mazon Q, Claude AI
+    - **Purpose:** Code generation, debugging, documentation
+    - **Extent:** I used AI to format my work in .MD format, translate some points, organize my work and make sure i have done everything. All the rest is my own work.
 
 12. **References**
     - Microsoft Azure Documentation: https://docs.microsoft.com/en-us/azure/
